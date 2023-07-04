@@ -1,0 +1,132 @@
+@import "variables.scss", "mixins.scss";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 10rem;
+    }
+
+    nav {
+        @include flexRow(1rem);
+        align-items: center;
+
+        a {
+            @include transition;
+            text-decoration: none;
+            font-size: $paragraphFont;
+            padding: 0.5rem 0;
+            color: $white;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                height: 0.1875rem;
+                background: $green;
+                @include transition;
+            }
+
+            &:is(:hover, :focus, .active) {
+                color: $green;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .search {
+        display: flex;
+        box-shadow: 5px 5px 10px #200634;
+        input {
+            width: 14.375rem;
+            height: 2.75rem;
+            padding: 0 1.6rem;
+            font-size: 0.875rem;
+            background: $dark-bg;
+            border: none;
+            border-radius: 0.25rem 0 0 0.25rem;
+            outline: none;
+            color: $light-purple;
+
+            &::placeholder {
+                color: $light-purple;
+            }
+        }
+
+        .srcBtn {
+            border: none;
+            cursor: pointer;
+            width: 4.375rem;
+            height: 2.75rem;
+            background: $button-bg;
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+    }
+
+    .hamburguer-menu {
+        cursor: pointer;
+        display: none;
+
+        .burguer {
+            display: block;
+            background: $light-purple;
+            width: 1.8rem;
+            height: 0.1875rem;
+            margin: 0.3125rem;
+            @include transition;
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        nav {
+            @include flexColumn(2rem);
+            align-items: center;
+            justify-content: space-evenly;
+            @include transition;
+            position: fixed;
+            width: 20rem;
+            left: -100%;
+            top: 0;
+            height: 100%;
+            background: $dark-bg;
+
+            &.active {
+                left: 0;
+            }
+
+            .search {
+                box-shadow: none;
+
+                input {
+                    background: $purple-bg;
+                }
+            }
+        }
+
+        .hamburguer-menu {
+            display: block;
+
+            &.active {
+                .burguer {
+                    background: $green;
+
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translateY(5px);
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg) translateY(-6px);
+                    }
+                }
+            }
+        }
+    }
+}

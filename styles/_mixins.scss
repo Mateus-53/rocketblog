@@ -1,0 +1,74 @@
+@import "variables.scss";
+
+@mixin transition {
+    transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+}
+
+@mixin flexColumn($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin flexRow($gap) {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+}
+
+@mixin flexBasis($f_basis) {
+    flex-grow: 1;
+    flex-basis: $f_basis;
+}
+
+@mixin date {
+    color: $black;
+    font-size: $lowParagraphFont;
+    font-family: $robotoFont;
+}
+
+@mixin tittle($color, $font_size) {
+    color: $color;
+    font-size: $font_size;
+    font-weight: 700;
+    font-family: $poppinsFont;
+}
+
+@mixin paragraph {
+    @include date;
+    line-height: 1.5rem;
+}
+
+@mixin image($max-h) {
+    max-height: $max-h;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    border-radius: 0.5rem;
+}
+
+@mixin post($gap) {
+    @include flexColumn($gap);
+
+    .date {
+        @include date;
+    }
+
+    h2 {
+        @include tittle($purple-bg, 1.5rem);
+    }
+
+    p {
+        @include paragraph;
+    }
+}
+
+@mixin responsiveSec($padding){
+    &{
+        padding: $padding;
+    }
+}

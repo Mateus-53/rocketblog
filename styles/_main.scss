@@ -1,0 +1,125 @@
+@import "variables.scss", "mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: $robotoFont;
+}
+
+section:first-child {
+    @include flexColumn(4rem);
+    background: $purple-bg;
+    padding: 4rem 8rem;
+    border-bottom: 0.375rem solid $green;
+
+    @media screen and (max-width: 600px) {
+        @include responsiveSec(4rem);
+    }
+
+    .home {
+        @include flexRow(1.85rem);
+        align-items: center;
+        flex-wrap: wrap;
+
+        .text-group {
+            @include flexBasis(35rem);
+
+            h1 {
+                @include tittle($button-bg, 2.25rem);
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: $paragraphFont;
+                line-height: 1.6875rem;
+                color: $light-purple;
+                margin-bottom: 1.5rem;
+            }
+
+            a.seeMore {
+                @include flexRow(0.5rem);
+                width: fit-content;
+                text-decoration: none;
+                align-items: center;
+                font-size: $paragraphFont;
+                color: $button-bg;
+                font-weight: 700;
+
+                img {
+                    @include transition;
+                }
+
+                &:is(:hover, :focus) {
+                    img {
+                        transform: translateX(0.5rem);
+                    }
+                }
+            }
+        }
+
+        figure {
+            @include flexBasis(35rem);
+            img {
+                @include image(20rem);
+            }
+        }
+    }
+}
+
+section:not(:first-child) {
+    @include flexRow(4rem);
+    background: $light-purple;
+    flex-wrap: wrap;
+    padding: 4rem 8rem;
+
+    @media screen and (max-width: 600px) {
+        @include responsiveSec(4rem);
+        @include flexRow(3rem);
+    }
+
+    .post-1 {
+        @include post(1rem);
+        @include flexBasis(35rem);
+        figure {
+            img {
+                @include image(20rem);
+            }
+        }
+    }
+
+    .side-posts {
+        @include post(1.5rem);
+        @include flexBasis(30rem);
+
+        .rectangle {
+            height: 0.06238rem;
+            background: $light-purple;
+        }
+
+        .side-post {
+            @include post(0.5rem);
+        }
+    }
+
+    .posts {
+        @include flexRow(1.85rem);
+        flex-wrap: wrap;
+
+        .post {
+            @include flexBasis(23.125rem);
+            @include flexColumn(1rem);
+
+            figure {
+                img {
+                    @include image(16rem);
+                }
+            }
+
+            .content {
+                @include post(0.5rem);
+            }
+        }
+    }
+}
