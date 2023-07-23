@@ -7,19 +7,19 @@
     -o-transition: all ease-in-out 0.3s;
 }
 
-@mixin flexColumn($gap) {
+@mixin flexColumn($gap: 0) {
     display: flex;
     flex-direction: column;
     gap: $gap;
 }
 
-@mixin flexRow($gap) {
+@mixin flexRow($gap: 0) {
     display: flex;
     flex-direction: row;
     gap: $gap;
 }
 
-@mixin flexBasis($f_basis) {
+@mixin flexBasis($f_basis: 35rem) {
     flex-grow: 1;
     flex-basis: $f_basis;
 }
@@ -42,7 +42,7 @@
     line-height: 1.5rem;
 }
 
-@mixin image($max-h) {
+@mixin image($max-h: 20rem) {
     max-height: $max-h;
     width: 100%;
     object-fit: cover;
@@ -64,11 +64,5 @@
 
     p {
         @include paragraph;
-    }
-}
-
-@mixin responsiveSec($padding){
-    &{
-        padding: $padding;
     }
 }

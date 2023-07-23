@@ -13,57 +13,63 @@ section:first-child {
     background: $purple-bg;
     padding: 4rem 8rem;
     border-bottom: 0.375rem solid $green;
+    @include flexRow(1.85rem);
+    align-items: center;
+    flex-wrap: wrap;
 
     @media screen and (max-width: 600px) {
-        @include responsiveSec(4rem);
+        padding: 4rem;
     }
 
-    .home {
-        @include flexRow(1.85rem);
-        align-items: center;
-        flex-wrap: wrap;
+    @media screen and (max-width: 400px) {
+        padding: 4rem 3rem;
+    }
 
-        .text-group {
-            @include flexBasis(35rem);
+    .text-group {
+        @include flexBasis();
 
-            h1 {
-                @include tittle($button-bg, 2.25rem);
-                margin-bottom: 1rem;
-            }
+        h1 {
+            @include tittle($button-bg, 2.25rem);
+            margin-bottom: 1rem;
 
-            p {
-                font-size: $paragraphFont;
-                line-height: 1.6875rem;
-                color: $light-purple;
-                margin-bottom: 1.5rem;
-            }
-
-            a.seeMore {
-                @include flexRow(0.5rem);
-                width: fit-content;
-                text-decoration: none;
-                align-items: center;
-                font-size: $paragraphFont;
-                color: $button-bg;
-                font-weight: 700;
-
-                img {
-                    @include transition;
-                }
-
-                &:is(:hover, :focus) {
-                    img {
-                        transform: translateX(0.5rem);
-                    }
-                }
+            @media screen and (max-width: 400px) {
+                font-size: 1.875rem;
             }
         }
 
-        figure {
-            @include flexBasis(35rem);
+        p {
+            font-size: $paragraphFont;
+            line-height: 1.6875rem;
+            color: $light-purple;
+            margin-bottom: 1.5rem;
+        }
+
+        a.seeMore {
+            @include flexRow(0.5rem);
+            width: fit-content;
+            text-decoration: none;
+            align-items: center;
+            font-size: $paragraphFont;
+            color: $button-bg;
+            font-weight: 700;
+
             img {
-                @include image(20rem);
+                @include transition;
             }
+
+            &:is(:hover, :focus) {
+                img {
+                    transform: translateX(0.5rem);
+                }
+            }
+        }
+    }
+
+    figure {
+        @include flexBasis();
+
+        img {
+            @include image();
         }
     }
 }
@@ -75,16 +81,21 @@ section:not(:first-child) {
     padding: 4rem 8rem;
 
     @media screen and (max-width: 600px) {
-        @include responsiveSec(4rem);
+        padding: 4rem;
         @include flexRow(3rem);
+    }
+
+    @media screen and (max-width: 400px) {
+        padding: 4rem 3rem;
     }
 
     .post-1 {
         @include post(1rem);
-        @include flexBasis(35rem);
+        @include flexBasis();
+
         figure {
             img {
-                @include image(20rem);
+                @include image();
             }
         }
     }
@@ -95,7 +106,7 @@ section:not(:first-child) {
 
         .rectangle {
             height: 0.06238rem;
-            background: $light-purple;
+            background: $rectangle;
         }
 
         .side-post {
