@@ -4,9 +4,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: $purple-bg;
+    padding: 4rem 8rem 0;
+
+    @media screen and (max-width: 600px) {
+        padding: 4rem 4rem 0;
+    }
+
+    @media screen and (max-width: 400px) {
+        padding: 4rem 3rem 0;
+    }
 
     .logo {
+        @include flexRow();
         width: 10rem;
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 8rem;
+        }
     }
 
     nav {
@@ -40,6 +59,7 @@ header {
             }
         }
     }
+
     .search {
         display: flex;
         box-shadow: 5px 5px 10px #200634;
@@ -69,11 +89,11 @@ header {
         }
     }
 
-    .hamburguer-menu {
+    .hamburger-menu {
         cursor: pointer;
         display: none;
 
-        .burguer {
+        .burger {
             display: block;
             background: $light-purple;
             width: 1.8rem;
@@ -85,35 +105,43 @@ header {
 
     @media screen and (max-width: 1080px) {
         nav {
-            @include flexColumn(2rem);
+            @include flexColumn(1rem);
             align-items: center;
             justify-content: space-evenly;
             @include transition;
-            position: fixed;
-            width: 20rem;
-            left: -100%;
-            top: 0;
-            height: 100%;
-            background: $dark-bg;
+            width: 14rem;
+            height: 50%;
+            padding: 2rem;
+            position: absolute;
+            opacity: 0;
+            top: 7.5rem;
+            right: 8.5rem;
+            background: $menu-bg;
+            backdrop-filter: blur(1rem);
+            border-radius: 1rem;
+
+            @media screen and (max-width: 600px) {
+                right: 4.5rem;
+            }
+        
+            @media screen and (max-width: 400px) {
+                right: 3.5rem;
+            }
 
             &.active {
-                left: 0;
+                opacity: 1;
             }
 
             .search {
-                box-shadow: none;
-
-                input {
-                    background: $purple-bg;
-                }
+                display: none;
             }
         }
 
-        .hamburguer-menu {
+        .hamburger-menu {
             display: block;
 
             &.active {
-                .burguer {
+                .burger {
                     background: $green;
 
                     &:nth-child(1) {
