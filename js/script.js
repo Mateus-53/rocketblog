@@ -1,7 +1,7 @@
 const navMenu = document.querySelector("nav"),
-	hamburguerMenu = document.querySelector(".hamburguer-menu");
+	hamburgerMenu = document.querySelector(".hamburger-menu");
 
-hamburguerMenu.addEventListener("click", () => {
-	hamburguerMenu.classList.toggle("active");
+hamburgerMenu.addEventListener("click", () => {
+	hamburgerMenu.classList.toggle("active");
 	navMenu.classList.toggle("active");
 });
