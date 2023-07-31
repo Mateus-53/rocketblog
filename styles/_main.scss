@@ -9,11 +9,10 @@
 }
 
 section:first-child {
-    @include flexColumn(4rem);
+    @include flexRow(1.85rem);
     background: $purple-bg;
     padding: 4rem 8rem;
     border-bottom: 0.375rem solid $green;
-    @include flexRow(1.85rem);
     align-items: center;
     flex-wrap: wrap;
 
