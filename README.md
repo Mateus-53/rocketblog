@@ -1,6 +1,13 @@
-<h1>RocketBlog</h1>
-<h2>🧠 Desafio Proposto:</h2>
-<p>Esse foi um desafio proposto pela <a href="https://app.rocketseat.com.br/" target="_blank">Plataforma Rocketseat</a>. Onde foi desafiado a criar uma homepage para um blog, com o objetivo de colocar em prática nossos conhecimentos. 💡</p>
-<h2>🎯 Tecnologias Utilizadas:</h2>
-<img height="40em" src="https://skills.thijs.gg/icons?i=html,css,scss,js,git,figma" alt="Skills Icons" >
+# RocketBlog
 
+Este projeto foi desenvolvido como parte de um desafio proposto pela [Rocketseat](https://app.rocketseat.com.br/). O objetivo era criar a homepage de um blog a partir de um design fornecido no Figma, aplicando conhecimentos de frontend para transformar o layout em uma interface funcional. Durante o desenvolvimento, optei por utilizar SCSS em vez de CSS puro, aproveitando suas funcionalidades avançadas para organizar e otimizar o código. 
+
+## :pushpin: Conhecimentos Aplicados
+
+- `SCSS`: Organização do código com variáveis, mixins e nesting para maior produtividade e manutenção.
+- `Responsividade`: Uso de Flexbox e media queries para adaptar o layout a diferentes tamanhos de tela.
+- `Práticas de Layout`: Aplicação de conceitos de design responsivo e atenção aos detalhes visuais do protótipo.
+
+## :rocket: Tecnologias Utilizadas
+
+[![My Skills](https://skillicons.dev/icons?i=html,scss,js,git,figma)](https://skillicons.dev)
